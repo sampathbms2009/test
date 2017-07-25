@@ -34,6 +34,5 @@ updatedversion = (currentversion.split("-v")[-2]+"-v"+version)
 
 commands.getoutput("git tag | xargs git tag -d")
 commands.getoutput("git tag "+ updatedversion)
-#git push https://sampathbms2009:seenappa1@github.com/sampathbms2009/test.git --tags
 command = commands.getoutput("git push https://"+username+":"+password+"@"+sourceurl+" --tags")
 print "Updated Version: "+updatedversion
