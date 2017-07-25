@@ -27,6 +27,7 @@ for o, a in myopts:
     elif o == '-p':
 	password=a
 
+sourceurl=sourceurl.split("https://")[1]
 currentversion = commands.getoutput("git ls-remote -t https://"+username+":"+password+"@"+sourceurl+"| awk -F'/' '{print $3}'| tail -n 1")
 print "Current Version: "+ currentversion
 version = str(int(currentversion.split("-v")[-1])+1)
