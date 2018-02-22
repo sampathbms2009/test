@@ -1,0 +1,14 @@
+#!/usr/bin/expect
+set user root
+set ip [lindex $argv 0]
+set password bmcAdm1n
+spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no  $user@$ip
+expect "password"
+send "$password\r"
+expect "❯" {send "pwd\n"}
+expect "❯" { send "uptime\n"}
+expect "❯" { send "date\n"}
+expect "❯" { send "\n"}
+expect "❯" { send "exit\n"}
+interact
+
